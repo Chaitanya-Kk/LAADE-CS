@@ -4,16 +4,13 @@
 
 ## 1. Structural Vibration Analysis
 
-**Formula:**
+**Formula:**  
+K * ϕ = λ * M * ϕ
 
-\[
-\mathbf{K} \boldsymbol{\phi} = \lambda \mathbf{M} \boldsymbol{\phi}
-\]
-
-- **K**: Stiffness matrix  
-- **M**: Mass matrix  
-- **λ**: Eigenvalue (squared natural frequency)  
-- **ϕ**: Mode shape vector  
+- K: Stiffness matrix  
+- M: Mass matrix  
+- λ: Eigenvalue (squared natural frequency)  
+- ϕ: Mode shape vector  
 
 **Use:** Determine natural frequencies and vibration modes of airframes.  
 **Purpose:** Avoid resonance and fatigue failure.
@@ -22,14 +19,11 @@
 
 ## 2. Aeroelastic Flutter Prediction
 
-**Formula:**
+**Formula:**  
+(K + λ*C + λ²*M) * ϕ = 0
 
-\[
-(\mathbf{K} + \lambda \mathbf{C} + \lambda^2 \mathbf{M}) \boldsymbol{\phi} = 0
-\]
-
-- **C**: Aerodynamic damping matrix  
-- **λ**: Complex eigenvalue related to flutter frequency and damping  
+- C: Aerodynamic damping matrix  
+- λ: Complex eigenvalue related to flutter frequency and damping  
 
 **Use:** Predict onset of flutter instability in wings and control surfaces.  
 **Purpose:** Prevent catastrophic structural failure.
@@ -38,14 +32,11 @@
 
 ## 3. Control System Stability
 
-**Formula:**
+**Formula:**  
+A * x = λ * x
 
-\[
-\mathbf{A} \mathbf{x} = \lambda \mathbf{x}
-\]
-
-- **A**: System state matrix  
-- **λ**: Eigenvalues indicating stability (real part negative = stable)  
+- A: System state matrix  
+- λ: Eigenvalues indicating stability (real part negative = stable)  
 
 **Use:** Analyze stability of spacecraft attitude and flight control systems.  
 **Purpose:** Ensure controlled, stable flight.
@@ -56,9 +47,7 @@
 
 **Formula:** Same as structural vibration:
 
-\[
-\mathbf{K} \boldsymbol{\phi} = \lambda \mathbf{M} \boldsymbol{\phi}
-\]
+K * ϕ = λ * M * ϕ
 
 **Use:** Determine vibration modes of turbines and engines.  
 **Purpose:** Avoid excessive vibrations causing damage.
@@ -67,11 +56,8 @@
 
 ## 5. Guidance and Navigation Filtering (Kalman Filter)
 
-**Formula:**
-
-\[
-\mathbf{P}_{k+1} = \mathbf{A} \mathbf{P}_k \mathbf{A}^T + \mathbf{Q} - \mathbf{A} \mathbf{P}_k \mathbf{H}^T (\mathbf{H} \mathbf{P}_k \mathbf{H}^T + \mathbf{R})^{-1} \mathbf{H} \mathbf{P}_k \mathbf{A}^T
-\]
+**Formula:**  
+P(k+1) = A * P(k) * Aᵀ + Q - A * P(k) * Hᵀ * (H * P(k) * Hᵀ + R)^(-1) * H * P(k) * Aᵀ
 
 - Eigenvalue decomposition used to analyze filter stability and convergence.
 
@@ -82,11 +68,8 @@
 
 ## 6. Satellite Attitude Dynamics
 
-**Formula:**
-
-\[
-\mathbf{I} \dot{\boldsymbol{\omega}} + \boldsymbol{\omega} \times (\mathbf{I} \boldsymbol{\omega}) = \mathbf{T}
-\]
+**Formula:**  
+I * dω/dt + ω × (I * ω) = T
 
 - Linearized form analyzed via eigenvalues for stability of rotational modes.
 
@@ -97,11 +80,8 @@
 
 ## 7. Thermal Analysis of Spacecraft
 
-**Formula:**
-
-\[
-\mathbf{K}_{thermal} \mathbf{T} = \lambda \mathbf{C}_{thermal} \mathbf{T}
-\]
+**Formula:**  
+K_thermal * T = λ * C_thermal * T
 
 - Thermal conduction and storage matrices replace stiffness and mass matrices.  
 
@@ -112,11 +92,8 @@
 
 ## 8. Rocket Propellant Slosh Dynamics
 
-**Formula:**
-
-\[
-\mathbf{M} \ddot{\mathbf{x}} + \mathbf{C} \dot{\mathbf{x}} + \mathbf{K} \mathbf{x} = 0
-\]
+**Formula:**  
+M * x'' + C * x' + K * x = 0
 
 - Eigenvalue analysis of sloshing modes to avoid coupling with vehicle dynamics.
 
@@ -127,13 +104,10 @@
 
 ## 9. Aeroacoustic Noise Prediction
 
-**Formula:**
+**Formula:**  
+A * x = λ * x
 
-\[
-\mathbf{A} \mathbf{x} = \lambda \mathbf{x}
-\]
-
-- **A**: Acoustic propagation matrix.
+- A: Acoustic propagation matrix.
 
 **Use:** Identify dominant noise modes in jet engines and flow paths.  
 **Purpose:** Design quieter aircraft.
@@ -142,11 +116,8 @@
 
 ## 10. Spacecraft Power System Stability
 
-**Formula:**
-
-\[
-\mathbf{A} \mathbf{x} = \lambda \mathbf{x}
-\]
+**Formula:**  
+A * x = λ * x
 
 - Eigenvalues of power distribution network for stability and fault analysis.
 
@@ -157,11 +128,8 @@
 
 ## 11. Orbital Mechanics - Linear Stability
 
-**Formula:**
-
-\[
-\mathbf{\dot{x}} = \mathbf{A} \mathbf{x}
-\]
+**Formula:**  
+dx/dt = A * x
 
 - Eigenvalues of linearized orbit matrix determine orbital stability.
 
@@ -172,13 +140,10 @@
 
 ## 12. Spacecraft Docking Dynamics
 
-**Formula:**
+**Formula:**  
+dx/dt = A * x + B * u
 
-\[
-\dot{\mathbf{x}} = \mathbf{A} \mathbf{x} + \mathbf{B} \mathbf{u}
-\]
-
-- Stability analyzed via eigenvalues of **A**.
+- Stability analyzed via eigenvalues of A.
 
 **Use:** Ensure stable approach and docking maneuvers.  
 **Purpose:** Avoid collision and achieve secure docking.
@@ -187,11 +152,8 @@
 
 ## 13. Launch Vehicle Trajectory Control
 
-**Formula:**
-
-\[
-\mathbf{\dot{x}} = \mathbf{A} \mathbf{x} + \mathbf{B} \mathbf{u}
-\]
+**Formula:**  
+dx/dt = A * x + B * u
 
 - Stability and controllability checked through eigenvalues.
 
@@ -202,11 +164,8 @@
 
 ## 14. Structural Damage Detection
 
-**Formula:**
-
-\[
-\mathbf{K}_d \boldsymbol{\phi} = \lambda \mathbf{M} \boldsymbol{\phi}
-\]
+**Formula:**  
+K_d * ϕ = λ * M * ϕ
 
 - Compare eigenvalues/modes of damaged vs. intact structure.
 
@@ -217,9 +176,8 @@
 
 ## 15. Space Weather Impact on Satellite Systems
 
-**Formula:**
-
-Space weather effects modeled as perturbations in system matrices, eigenvalues track system response.
+**Formula:**  
+Space weather effects modeled as perturbations in system matrices; eigenvalues track system response.
 
 **Use:** Predict satellite system degradation or failure due to space weather.  
 **Purpose:** Improve resilience.
@@ -228,11 +186,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 16. Vibration Isolation Design
 
-**Formula:**
-
-\[
-(\mathbf{K} - \omega^2 \mathbf{M}) \boldsymbol{\phi} = 0
-\]
+**Formula:**  
+(K - ω² * M) * ϕ = 0
 
 - Eigenvalues guide design of mounts isolating sensitive payloads.
 
@@ -243,13 +198,10 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 17. Hypersonic Flow Stability
 
-**Formula:**
+**Formula:**  
+J * ϕ = λ * ϕ
 
-\[
-\mathbf{J} \boldsymbol{\phi} = \lambda \boldsymbol{\phi}
-\]
-
-- **J**: Jacobian matrix of linearized flow equations.
+- J: Jacobian matrix of linearized flow equations.
 
 **Use:** Analyze shock wave and boundary layer stability.  
 **Purpose:** Prevent flow separation, maintain control.
@@ -258,11 +210,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 18. Aerodynamic Mode Decomposition
 
-**Formula:**
-
-\[
-\mathbf{A} \mathbf{v} = \lambda \mathbf{v}
-\]
+**Formula:**  
+A * v = λ * v
 
 - Identify airflow modes influencing lift and drag.
 
@@ -273,11 +222,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 19. Rocket Engine Combustion Instability
 
-**Formula:**
-
-\[
-(\mathbf{K} + i \omega \mathbf{C} - \omega^2 \mathbf{M}) \boldsymbol{\phi} = 0
-\]
+**Formula:**  
+(K + iωC - ω² M) * ϕ = 0
 
 - Detect resonant combustion oscillations.
 
@@ -288,13 +234,10 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 20. Satellite Communication Network Optimization
 
-**Formula:**
+**Formula:**  
+L * x = λ * x
 
-\[
-\mathbf{L} \mathbf{x} = \lambda \mathbf{x}
-\]
-
-- **L**: Laplacian matrix of satellite network graph.
+- L: Laplacian matrix of satellite network graph.
 
 **Use:** Optimize routing and connectivity.  
 **Purpose:** Maximize network robustness and efficiency.
@@ -303,11 +246,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 21. Satellite Orbit Stability Analysis
 
-**Formula:**
-
-\[
-\mathbf{\dot{x}} = \mathbf{A} \mathbf{x}, \quad \det(\lambda \mathbf{I} - \mathbf{A}) = 0
-\]
+**Formula:**  
+dx/dt = A * x, where det(λI - A) = 0
 
 - Linearized orbital dynamics matrix eigenvalues determine stability.
 
@@ -318,11 +258,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 22. Structural Damage Detection (Advanced)
 
-**Formula:**
-
-\[
-\mathbf{K}_d \boldsymbol{\phi} = \lambda \mathbf{M} \boldsymbol{\phi}
-\]
+**Formula:**  
+K_d * ϕ = λ * M * ϕ
 
 - Comparison of mode shapes to detect damage.
 
@@ -333,11 +270,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 23. Rocket Engine Combustion Instability (Advanced)
 
-**Formula:**
-
-\[
-(\mathbf{K} + i \omega \mathbf{C} - \omega^2 \mathbf{M}) \boldsymbol{\phi} = 0
-\]
+**Formula:**  
+(K + iωC - ω² M) * ϕ = 0
 
 - Frequency and damping analysis of combustion chamber.
 
@@ -348,11 +282,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 24. Aerodynamic Mode Decomposition (Advanced)
 
-**Formula:**
-
-\[
-\mathbf{A} \mathbf{v} = \lambda \mathbf{v}
-\]
+**Formula:**  
+A * v = λ * v
 
 - Analysis of aerodynamic modes for control optimization.
 
@@ -363,11 +294,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 25. Thermal Stress Mode Shapes
 
-**Formula:**
-
-\[
-\mathbf{K}_{thermal} \boldsymbol{\phi} = \lambda \mathbf{M}_{thermal} \boldsymbol{\phi}
-\]
+**Formula:**  
+K_thermal * ϕ = λ * M_thermal * ϕ
 
 - Thermal stiffness and mass matrices.
 
@@ -378,11 +306,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 26. Satellite Communication Network Optimization (Advanced)
 
-**Formula:**
-
-\[
-\mathbf{L} \mathbf{x} = \lambda \mathbf{x}
-\]
+**Formula:**  
+L * x = λ * x
 
 - Eigenvalues used to assess network robustness.
 
@@ -393,11 +318,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 27. Spacecraft Docking Dynamics (Advanced)
 
-**Formula:**
-
-\[
-\dot{\mathbf{x}} = \mathbf{A} \mathbf{x} + \mathbf{B} \mathbf{u}
-\]
+**Formula:**  
+dx/dt = A * x + B * u
 
 - Eigenvalue stability analysis for docking.
 
@@ -408,11 +330,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 28. Vibration Isolation Systems (Advanced)
 
-**Formula:**
-
-\[
-\mathbf{M} \ddot{\mathbf{x}} + \mathbf{C} \dot{\mathbf{x}} + \mathbf{K} \mathbf{x} = \mathbf{F}
-\]
+**Formula:**  
+M * x'' + C * x' + K * x = F
 
 - Design based on modal vibration analysis.
 
@@ -423,11 +342,8 @@ Space weather effects modeled as perturbations in system matrices, eigenvalues t
 
 ## 29. Hypersonic Flow Stability (Advanced)
 
-**Formula:**
-
-\[
-\mathbf{J} \boldsymbol{\phi} = \lambda \boldsymbol{\phi}
-\]
+**Formula:**  
+J * ϕ = λ * ϕ
 
 - Analyze stability of shock waves at hypersonic speeds.
 
